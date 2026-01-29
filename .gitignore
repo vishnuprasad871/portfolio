@@ -1,0 +1,18 @@
+# Resume files
+VISHNU_PRASAD_Resume_3 (1).pdf
+resume_text.txt
+resume_content.json
+
+# Dependencies
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
