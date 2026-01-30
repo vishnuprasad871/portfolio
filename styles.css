@@ -1081,3 +1081,15 @@ a:hover {
         justify-content: center;
     }
 }
+/* ===== Project Link Styles ===== */
+.project-subtitle { font-size: 0.85rem; font-family: var(--font-mono); color: var(--accent-primary); letter-spacing: 0.5px; }
+.project-github-link {
+    margin-left: auto; width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0, 212, 255, 0.1); color: var(--accent-primary);
+    transition: var(--transition); font-size: 1.1rem;
+}
+.project-github-link:hover {
+    background: var(--accent-primary); color: var(--bg-primary);
+    transform: translateY(-2px);
+}

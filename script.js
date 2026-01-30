@@ -9,8 +9,8 @@ const skillsData = [
         ]
     },
     {
-        icon: 'fa-palette',
         title: 'Frontend Development',
+        icon: 'fa-palette',
         skills: [
             { name: 'Next.js', level: 'Advanced', progress: 90, desc: 'App Router, Server Components, API Routes, SSR/SSG, Headless Commerce' },
             { name: 'React.js', level: 'Advanced', progress: 88, desc: 'Hooks, Context API, Redux, Component architecture, Performance optimization' },
@@ -18,8 +18,8 @@ const skillsData = [
         ]
     },
     {
-        icon: 'fa-server',
         title: 'Backend Development',
+        icon: 'fa-server',
         skills: [
             { name: 'Spring Boot', level: 'Advanced', progress: 85, desc: 'REST APIs, Microservices, JPA, Spring Security, Batch processing' },
             { name: 'PHP', level: 'Advanced', progress: 88, desc: 'Magento framework, Custom extensions, OOP, Dependency Injection' },
@@ -27,8 +27,8 @@ const skillsData = [
         ]
     },
     {
-        icon: 'fa-tools',
         title: 'DevOps & Tools',
+        icon: 'fa-tools',
         skills: [
             { name: 'Docker', level: 'Intermediate', progress: 70, desc: 'Containerization, Docker Compose, Multi-stage builds' },
             { name: 'Git / GitHub', level: 'Advanced', progress: 90, desc: 'Version control, Branching strategies, CI/CD, Code reviews' },
@@ -65,6 +65,20 @@ const experienceData = [
 ];
 
 const projectsData = [
+    {
+        title: 'Tour With Alpha',
+        icon: 'fa-plane-departure',
+        subtitle: 'Tour Booking Platform',
+        details: [
+            'Full-featured tour booking platform with Next.js & Magento 2',
+            'Implemented booking management and payment integration',
+            'Developed GraphQL APIs for headless commerce experience',
+            'Deployed and hosted on GitHub'
+        ],
+        tech: ['Next.js', 'Magento 2', 'GraphQL', 'TypeScript'],
+        link: 'https://github.com/vishnuprasad871/tourwithalpha-frontend',
+        featured: true
+    },
     {
         title: 'IKEA – Swedish Food Market',
         icon: 'fa-utensils',
@@ -337,6 +351,11 @@ function renderProjects() {
                         <h3 class="project-title">${project.title}</h3>
                         <span class="project-subtitle">${project.subtitle}</span>
                     </div>
+                    ${project.link ? `
+                    <a href="${project.link}" target="_blank" class="project-github-link" aria-label="View on GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    ` : ''}
                 </div>
                 <div class="project-body">
                     <ul class="project-details">
