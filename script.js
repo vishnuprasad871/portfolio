@@ -12,9 +12,9 @@ const skillsData = [
         title: 'Frontend Development',
         icon: 'fa-palette',
         skills: [
-            { name: 'Next.js', level: 'Advanced', progress: 90, desc: 'App Router, Server Components, API Routes, SSR/SSG, Headless Commerce' },
-            { name: 'React.js', level: 'Advanced', progress: 88, desc: 'Hooks, Context API, Redux, Component architecture, Performance optimization' },
-            { name: 'TypeScript', level: 'Advanced', progress: 85, desc: 'Type safety, Interfaces, Generics, Advanced types' }
+            { name: 'Next.js', level: 'Intermediate', progress: 70, desc: 'App Router, Server Components, API Routes, SSR/SSG, Headless Commerce' },
+            { name: 'React.js', level: 'Intermediate', progress: 70, desc: 'Hooks, Context API, Redux, Component architecture, Performance optimization' },
+            { name: 'TypeScript', level: 'Intermediate', progress: 70, desc: 'Type safety, Interfaces, Generics, Advanced types' }
         ]
     },
     {
