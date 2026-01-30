@@ -66,33 +66,119 @@ const experienceData = [
 
 const projectsData = [
     {
-        title: 'Tour With Alpha',
-        icon: 'fa-plane-departure',
-        description: 'A full-featured tour booking platform built with Next.js frontend and Magento 2 backend. Features include booking management, payment integration, and GraphQL APIs.',
-        tech: ['Next.js', 'TypeScript', 'Magento 2', 'GraphQL'],
-        link: 'https://github.com/vishnuprasad871/tourwithalpha-frontend',
-        featured: true
+        title: 'IKEA – Swedish Food Market',
+        icon: 'fa-utensils',
+        subtitle: 'Online Food Delivery Platform',
+        details: [
+            'Developed and maintained an online food delivery application',
+            'Integrated multiple delivery partners for order fulfilment',
+            'Implemented Single Sign-On (SSO) for secure user authentication',
+            'Integrated Mastercard payment, Apple Pay, and checkout workflows'
+        ],
+        tech: ['Java', 'Spring Boot', 'SSO', 'Payment Gateways']
     },
     {
-        title: 'Magento PWA Studio',
-        icon: 'fa-store',
-        description: 'Fork of Magento PWA Studio with custom optimizations. Development tools to build, optimize and deploy Progressive Web Applications.',
-        tech: ['JavaScript', 'React', 'GraphQL', 'PWA'],
-        link: 'https://github.com/vishnuprasad871/pwa-studio'
+        title: 'EDOC',
+        icon: 'fa-database',
+        subtitle: 'Spring Boot Application',
+        details: [
+            'Built a Spring Boot application to store and process data from SAP APIs',
+            'Implemented Spring Batch for large-scale data ingestion and processing',
+            'Designed efficient database structures for SAP data storage',
+            'Ensured reliability with proper logging and error handling'
+        ],
+        tech: ['Java', 'Spring Boot', 'Spring Batch', 'MySQL', 'SAP APIs']
     },
     {
-        title: 'B2B Kochi',
-        icon: 'fa-building',
-        description: 'A B2B platform built with Java and Spring Boot. Features include SAP integration, order synchronization, and enterprise-grade data management.',
-        tech: ['Java', 'Spring Boot', 'PostgreSQL', 'REST API'],
-        link: 'https://github.com/vishnuprasad871/b2bkochi'
+        title: 'BFab / Matalan',
+        icon: 'fa-shirt',
+        subtitle: 'Fashion E-commerce Platform',
+        details: [
+            'Developed brand-based store architecture on Magento 2',
+            'Integrated multiple payment gateways (Apple Pay, Checkout.com, Tabby, etc.)',
+            'Implemented backend services using Python FastAPI with MongoDB',
+            'Optimized checkout and payment workflows'
+        ],
+        tech: ['Magento 2', 'Python FastAPI', 'MongoDB', 'Payment Integration']
     },
     {
-        title: 'Niram Website',
-        icon: 'fa-paint-brush',
-        description: 'A beautifully designed website showcasing modern frontend development practices with clean HTML structure and responsive design.',
-        tech: ['HTML5', 'CSS3', 'JavaScript', 'Responsive'],
-        link: 'https://github.com/vishnuprasad871/niram-website'
+        title: 'WireAndSwitch',
+        icon: 'fa-network-wired',
+        subtitle: 'Electrical E-commerce Platform',
+        details: [
+            'Built a multi-vendor e-commerce platform using Webkul Marketplace',
+            'Integrated Shiprocket for shipping and logistics',
+            'Developed a Magento PWA application for retail customers',
+            'Implemented separate catalogs, sales, and CMS features for vendors'
+        ],
+        tech: ['Magento 2', 'PWA', 'Webkul', 'Shiprocket']
+    },
+    {
+        title: 'YallaToys',
+        icon: 'fa-gamepad',
+        subtitle: 'Online Toy Store',
+        details: [
+            'Performed Magento website migration and version upgrades',
+            'Integrated Tagalys for advanced product search and merchandising',
+            'Implemented MyFatoorah payment gateway and Referral modules',
+            'Optimized catalog and checkout performance'
+        ],
+        tech: ['Magento 2', 'Tagalys', 'MyFatoorah', 'PHP']
+    },
+    {
+        title: 'GoPayNet',
+        icon: 'fa-credit-card',
+        subtitle: 'Payment Gateway Platform',
+        details: [
+            'Worked on a payment gateway platform supporting online and POS transactions',
+            'Enabled sellers to integrate GoPayNet across multiple platforms',
+            'Performed performance optimization for high-volume transactions'
+        ],
+        tech: ['FinTech', 'Payment Gateway', 'POS', 'High Performance']
+    },
+    {
+        title: 'VSTAR',
+        icon: 'fa-vest',
+        subtitle: 'Online Clothing Store',
+        details: [
+            'Handled Magento website migration and version updates',
+            'Integrated Shiprocket for shipping and order tracking',
+            'Improved store stability and performance post-migration'
+        ],
+        tech: ['Magento 2', 'Shiprocket', 'Migration', 'Performance']
+    },
+    {
+        title: 'Agappe Diagnostics Ltd',
+        icon: 'fa-heartbeat',
+        subtitle: 'Healthcare / Diagnostics',
+        details: [
+            'Integrated ZOHO with Magento for CRM and business workflows',
+            'Implemented ERP catalog management integration',
+            'Automated product and inventory synchronization between ERP and Magento'
+        ],
+        tech: ['Magento 2', 'ZOHO', 'ERP Integration', 'Automation']
+    },
+    {
+        title: 'Al Bahar',
+        icon: 'fa-tv',
+        subtitle: 'Electronics Store (Kuwait)',
+        details: [
+            'Provided POS integration and support',
+            'Implemented advanced search functionality',
+            'Enhanced system stability for high-traffic operations'
+        ],
+        tech: ['Magento 2', 'POS', 'Search', 'High Traffic']
+    },
+    {
+        title: 'Electronyat / Hail Security',
+        icon: 'fa-bolt',
+        subtitle: 'Electronics Store (Qatar)',
+        details: [
+            'Developed customized reports for business insights',
+            'Implemented dynamic product attribute management',
+            'Enhanced catalog flexibility and admin usability'
+        ],
+        tech: ['Magento 2', 'Reporting', 'Admin Customization']
     }
 ];
 
@@ -146,13 +232,13 @@ navLinks.forEach(link => {
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const scrollY = window.pageYOffset;
-    
+
     sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 100;
         const sectionId = section.getAttribute('id');
         const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-        
+
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             navLinks.forEach(link => link.classList.remove('active'));
             if (navLink) navLink.classList.add('active');
@@ -167,7 +253,7 @@ let isDeleting = false;
 
 function typeEffect() {
     const currentPhrase = typingPhrases[phraseIndex];
-    
+
     if (isDeleting) {
         typingText.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
@@ -175,9 +261,9 @@ function typeEffect() {
         typingText.textContent = currentPhrase.substring(0, charIndex + 1);
         charIndex++;
     }
-    
+
     let typeSpeed = isDeleting ? 30 : 80;
-    
+
     if (!isDeleting && charIndex === currentPhrase.length) {
         typeSpeed = 2000;
         isDeleting = true;
@@ -186,7 +272,7 @@ function typeEffect() {
         phraseIndex = (phraseIndex + 1) % typingPhrases.length;
         typeSpeed = 500;
     }
-    
+
     setTimeout(typeEffect, typeSpeed);
 }
 
@@ -241,22 +327,26 @@ function renderTimeline() {
 // ===== Render Projects =====
 function renderProjects() {
     projectsContainer.innerHTML = projectsData.map(project => `
-        <article class="project-card${project.featured ? ' featured' : ''} reveal">
-            <div class="project-image">
-                <div class="project-placeholder">
-                    <i class="fas ${project.icon}"></i>
+        <article class="project-card reveal">
+            <div class="project-content full-height">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas ${project.icon}"></i>
+                    </div>
+                    <div class="project-title-group">
+                        <h3 class="project-title">${project.title}</h3>
+                        <span class="project-subtitle">${project.subtitle}</span>
+                    </div>
                 </div>
-                <div class="project-overlay">
-                    <a href="${project.link}" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i>
-                    </a>
+                <div class="project-body">
+                    <ul class="project-details">
+                        ${project.details.map(detail => `<li>${detail}</li>`).join('')}
+                    </ul>
                 </div>
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">${project.title}</h3>
-                <p class="project-description">${project.description}</p>
-                <div class="project-tech">
-                    ${project.tech.map(t => `<span>${t}</span>`).join('')}
+                <div class="project-footer">
+                    <div class="project-tech">
+                        ${project.tech.map(t => `<span>${t}</span>`).join('')}
+                    </div>
                 </div>
             </div>
         </article>
@@ -266,15 +356,15 @@ function renderProjects() {
 // ===== Scroll Reveal Animation =====
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.reveal');
-    
+
     reveals.forEach(element => {
         const windowHeight = window.innerHeight;
         const elementTop = element.getBoundingClientRect().top;
         const revealPoint = 150;
-        
+
         if (elementTop < windowHeight - revealPoint) {
             element.classList.add('active');
-            
+
             // Animate skill bars
             const skillBars = element.querySelectorAll('.skill-progress');
             skillBars.forEach(bar => {
@@ -290,7 +380,7 @@ contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
-    
+
     // Show success message (in a real app, you'd send this to a server)
     alert(`Thank you, ${data.name}! Your message has been received. I'll get back to you soon.`);
     contactForm.reset();
@@ -298,7 +388,7 @@ contactForm.addEventListener('submit', (e) => {
 
 // ===== Smooth Scroll for anchor links =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -314,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     typeEffect();
     revealOnScroll();
-    
+
     // Add reveal class to other sections
     document.querySelectorAll('.about-content, .contact-content').forEach(el => {
         el.classList.add('reveal');
